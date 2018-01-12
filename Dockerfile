@@ -17,6 +17,7 @@ RUN echo "Downloading PhantomJS v${PHANTOMJS_VERSION}..." && \
     curl -sL "https://github.com/dustinblackman/phantomized/releases/download/${PHANTOMJS_VERSION}/dockerized-phantomjs.tar.gz" | tar zx -C /
 
 WORKDIR /docker
+
 ADD project.clj .
 RUN lein deps
 
