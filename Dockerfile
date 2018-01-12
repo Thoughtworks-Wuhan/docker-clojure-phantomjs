@@ -1,12 +1,12 @@
 FROM clojure:alpine
 
-MAINTAINER Christian Meter <cmeter@googlemail.com>
+MAINTAINER Baiyuan Wang <wangbaiyuan@outlook.com>
 
 ENV PHANTOMJS_VERSION 2.1.1
 ENV LANG en_US.utf8
 
 RUN apk add --no-cache git curl fontconfig ttf-dejavu && \
-    mkdir /code
+    mkdir /docker
 
 # Based on https://hub.docker.com/r/docksal/backstopjs/~/dockerfile/
 RUN echo "Downloading PhantomJS v${PHANTOMJS_VERSION}..." && \
@@ -16,6 +16,7 @@ RUN echo "Downloading PhantomJS v${PHANTOMJS_VERSION}..." && \
     echo "Fixing PhantomJS on Alpine" && \
     curl -sL "https://github.com/dustinblackman/phantomized/releases/download/${PHANTOMJS_VERSION}/dockerized-phantomjs.tar.gz" | tar zx -C /
 
-WORKDIR /code
+WORKDIR /docker
+ADD project.clj .
+RUN lein deps
 
-CMD ["lein", "doo", "phantom", "test", "once"]
