@@ -15,7 +15,6 @@
                  [binaryage/devtools "0.9.8"]
                  [figwheel-sidecar "0.5.9"]
                  [com.cemerick/piggieback "0.2.1"]]
-
   :plugins [[lein-shell "0.4.0"]
             [lein-cljsbuild "1.1.7"]
             [s3-wagon-private "1.3.1"]
