@@ -12,19 +12,6 @@
                  [re-com "2.0.0"]
                  [secretary "1.2.3"]]
 
-  :plugins [[lein-shell "0.4.0"]
-            [lein-cljsbuild "1.1.4"]
-            [lein-sassy "1.0.8"]
-            ;[cljs-simple-cache-buster "0.2.0"]
-            [s3-wagon-private "1.3.0"]]
-  :profiles
-  {:dev
-   {:dependencies [[cheshire "5.6.3"]
-                   [binaryage/devtools "0.8.2"]
-                   [figwheel-sidecar "0.5.9"]
-                   [com.cemerick/piggieback "0.2.1"]]
-
-    :plugins      [[lein-figwheel "0.5.9"]
-                   [lein-doo "0.1.7"]]
-    }}
+  :plugins [[s3-wagon-private "1.3.0"]
+            [lein-doo "0.1.7"]]
   )
